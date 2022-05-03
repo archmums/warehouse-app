@@ -2,9 +2,10 @@
 <h2><%= @warehouse.description %></h2>
 <div>
   <strong>nome: <%=@warehouse.name %> </strong>
-</div>
   <strong>Código: <%=@warehouse.code %> </strong>
   <strong>Cidade: <%=@warehouse.city %> </strong>
   <strong>Area: <%=@warehouse.area %> m2 </strong>
   <strong>Endereço: <%=@warehouse.address %> , cep: <%= @warehouse.cep %></strong>
+</div>
 
+<%= link_to('voltar', root_path)%>

@@ -43,5 +43,18 @@ describe '#valid' do
           expect(result).to eq false
           
        end
+
+       it 'false when cep is wrong' do
+        # Arrange
+        first_warehouse = Warehouse.new(name: 'RIO', code: 'RIO', address: 'Endereço',
+                                        cep: '002-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
+
+        # Act
+        result = first_warehouse.valid?
+        
+        # Assert
+        expect(result).to eq false
+        
+     end
   end
 end

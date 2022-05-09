@@ -8,4 +8,10 @@
   <strong>Endereço: <%=@warehouse.address %> , cep: <%= @warehouse.cep %></strong>
 </div>
 
+<%= link_to('Editar', edit_warehouse_path(@warehouse.id))%>
+<%= button_to('Remover', warehouse_path(@warehouse.id), method: :delete)%>
+
+
+<div>
 <%= link_to('voltar', root_path)%>
+</div>

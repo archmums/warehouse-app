@@ -1,42 +1,14 @@
 <h1>Novo Galpão</h1>
+<% if (@warehouse.errors.any?)%>
+<p>Galpão não pode ser cadastro devido aos seguintes erros: </p>
+<ul>
+  <%@warehouse.errors.full_messages.each do |msg|%>
+  <li>
+  <%= msg %>
+  </li>
+  <%end%>
+</ul>
 
-<%= form_with(model: @warehouse) do |f| %>
-  <div>
-  <%= f.label :name, 'nome' %>
-  <%= f.text_field :name %>
-  </div>
-
-  <div>
-  <%= f.label :code, 'código' %>
-  <%= f.text_field :code %>
-  </div>
-
-  <div>
-  <%= f.label :city, 'cidade' %>
-  <%= f.text_field :city %>
-  </div>
-
-  <div>
-  <%= f.label :area, 'area' %>
-  <%= f.number_field :area %>
-  </div>
-
-  <div>
-  <%= f.label :address, 'endereço' %>
-  <%= f.text_field :address %>
-  </div>
-
-  <div>
-  <%= f.label :cep, 'cep' %>
-  <%= f.text_field :cep %>
-  </div>
-
-  <div>
-  <%= f.label :description, 'descrição' %>
-  <%= f.text_area :description %>
-  </div>
-
-  <div>
-  <%= f.submit 'Enviar'%>
-  </div>
 <%end%>
+ 
+<%= render 'form' %>

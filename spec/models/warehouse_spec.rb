@@ -6,36 +6,47 @@ describe '#valid' do
       # Arrange
         warehouse = Warehouse.new(name: '', code: 'RIO', address: 'Endereço',
                                   cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
+
       # Act
-      result = warehouse.valid?
+        result = warehouse.valid?
+
       # Expect
-      expect(result).to eq false
+        expect(result).to eq false
       end
+
     it 'false when code is empty' do
         # Arrange
           warehouse = Warehouse.new(name: 'Rio', code: '', address: 'Endereço',
                                     cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
+
         # Act
         result = warehouse.valid?
+
         # Expect
         expect(result).to eq false
+
       end
     it 'false when adress is empty' do
+
           # Arrange
             warehouse = Warehouse.new(name: 'Rio', code: '', address: '',
                                       cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
+
           # Act
           result = warehouse.valid?
+
           # Expect
         expect(result).to eq false
+
         end
+
     it 'false when code is already in use' do
           # Arrange
           first_warehouse = Warehouse.create(name: 'RIO', code: 'RIO', address: 'Endereço',
-                                          cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
+                                              cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
 
           second_warehouse = Warehouse.create(name: 'belford roxo', code: 'RIO', address: 'Endereço longe ',
-                                          cep: '25000-400', city: 'Rio de janeiro ', area: 30000, description: 'outra coisa')
+                                              cep: '25000-400', city: 'Rio de janeiro ', area: 30000, description: 'outra coisa')
           # Act
           result = second_warehouse.valid?
           

@@ -1,0 +1,13 @@
+<h1>Novo Fornecedor</h1>
+<% if (@suppliers.errors.any?)%>
+<p>Fornecedor não pode ser cadastro devido aos seguintes erros: </p>
+<ul>
+  <%@suppliers.errors.full_messages.each do |msg|%>
+  <li>
+  <%= msg %>
+  </li>
+  <%end%>
+</ul>
+
+<%end%>
+<%= render 'form' %>

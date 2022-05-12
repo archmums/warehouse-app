@@ -28,15 +28,15 @@ describe '#valid' do
       end
     it 'false when adress is empty' do
 
-          # Arrange
-            warehouse = Warehouse.new(name: 'Rio', code: '', address: '',
+        # Arrange
+          warehouse = Warehouse.new(name: 'Rio', code: '', address: '',
                                       cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
 
-          # Act
+        # Act
           result = warehouse.valid?
 
-          # Expect
-        expect(result).to eq false
+        # Expect
+          expect(result).to eq false
 
         end
 

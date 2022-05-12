@@ -43,22 +43,23 @@ describe 'Usuário edita um galpão' do
     expect(page).to have_content 'cep: 30500-000'
 
   end
-  it 'e mantém os campos obrigatorios' do
-  #Arrange
-  warehouse = Warehouse.create!(name: 'Aeroporto-SP', code: 'GRU', city: 'Guarulhos', area: 100_00,
-    address: 'rua aparecida, 1000', cep: '15000-000', description: 'Galpão destinado para cargas internacionais')
-  #Act
-  visit root_path
-  click_on 'Aeroporto-SP'
-  click_on 'Editar'
-  fill_in 'Nome', with: ''
-  fill_in 'Area', with: ''
-  fill_in 'Cep', with: ''
-  fill_in 'Endereço', with: 'Rua alberta, N100'
-  click_on 'Enviar'
+    it 'e mantém os campos obrigatorios' do
+    #Arrange
+    warehouse = Warehouse.create!(name: 'Aeroporto-SP', code: 'GRU', city: 'Guarulhos', area: 100_00,
+      address: 'rua aparecida, 1000', cep: '15000-000', description: 'Galpão destinado para cargas internacionais')
+    #Act
+    visit root_path
+    click_on 'Aeroporto-SP'
+    click_on 'Editar'
+    fill_in 'Nome', with: ''
+    fill_in 'Area', with: ''
+    fill_in 'Cep', with: ''
+    fill_in 'Endereço', with: 'Rua alberta, N100'
+    click_on 'Enviar'
 
-  #Assert
-  expect(page).to have_content 'Não foi possivel atualizar o galpão'
+    #Assert
+    expect(page).to have_content 'Não foi possivel atualizar o galpão'
+
   end
 
 end

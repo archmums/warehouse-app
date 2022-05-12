@@ -35,6 +35,7 @@ describe 'Usuário edita um fornecedor' do
   
     #Assert
     expect(page).to have_content 'Não foi possivel atualizar o cadastro do fornecedor'
-    end
+
+  end
 
 end

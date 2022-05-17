@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Warehouse, type: :model do
 describe '#valid' do
-    it 'false when name is empty' do
+      it 'false when name is empty' do
       # Arrange
         warehouse = Warehouse.new(name: '', code: 'RIO', address: 'Endereço',
                                   cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
@@ -14,7 +14,7 @@ describe '#valid' do
         expect(result).to eq false
       end
 
-    it 'false when code is empty' do
+      it 'false when code is empty' do
         # Arrange
           warehouse = Warehouse.new(name: 'Rio', code: '', address: 'Endereço',
                                     cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')
@@ -26,7 +26,7 @@ describe '#valid' do
         expect(result).to eq false
 
       end
-    it 'false when adress is empty' do
+      it 'false when adress is empty' do
 
         # Arrange
           warehouse = Warehouse.new(name: 'Rio', code: '', address: '',
@@ -40,7 +40,7 @@ describe '#valid' do
 
         end
 
-    it 'false when code is already in use' do
+      it 'false when code is already in use' do
           # Arrange
           first_warehouse = Warehouse.create(name: 'RIO', code: 'RIO', address: 'Endereço',
                                               cep: '25000-000', city: 'Rio', area: 10000, description: 'Alguma coisa')

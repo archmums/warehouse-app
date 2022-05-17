@@ -3,6 +3,7 @@ pt-BR:
     models:
       warehouse: 'Galpão'
       supplier: 'Fornecedor'
+      product_model: 'Modelo de Produto'
     attributes:
       warehouse:
         name: "Nome"
@@ -18,5 +19,15 @@ pt-BR:
         full_address: 'Endereço completo'
         city: 'Cidade'
         state: 'Estado'
+      product_model:
+        name: 'Nome'
+        weight: 'Peso'
+        width: 'Largura'
+        depth: 'Profundidade'
+        height: 'Altura'
+        sku: 'SKU'
+        supplier_id: 'Fornecedor'
+      
+        
 
       # will translate User attribute "login" as "Handle"
